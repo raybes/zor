@@ -16,14 +16,12 @@
   <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
-
-  <!-- Content here -->
-  <!-- templates/base.html -->
-	<header>
-		<a href="{% url 'home' %}">Home</a> | <a href="{% url 'contact' %}">Contact</a>
-	</header>
+<header>
+	<a href="{% url 'home' %}">Home</a> | <a href="{% url 'contact' %}">Contact</a>
+</header>
 {% block content %}
 {% endblock content %}
+{% static 'js/bootstrap.js' %}
 </body>
 
 </html>
