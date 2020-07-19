@@ -4,7 +4,10 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>
+	  {% block title %}
+	  {% endblock title %}
+  </title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#fafafa">
@@ -22,9 +25,7 @@
 {% block content %}
 {% endblock content %}
 <script type="text/javascript" src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
-
 <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
-
 <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
 
 </html>
