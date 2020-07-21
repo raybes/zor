@@ -23,7 +23,7 @@ def contactView(request):
             user_email = form.cleaned_data['user_email']
             message = form.cleaned_data['message']
             try:
-                send_mail(subject, message, user_email, ['contact@zor.me',])
+                send_mail(subject, message, user_email, ['admin@zor.me'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('success')
