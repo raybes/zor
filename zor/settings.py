@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
-    'base_app.apps.BaseAppConfig'
+    'base_app.apps.BaseAppConfig',
+    'sendemail.apps.SendemailConfig'
 ]
 
 MIDDLEWARE = [
@@ -56,9 +57,9 @@ ROOT_URLCONF = 'zor.urls'
 
 TEMPLATES = [
     {
+        
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],        'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -127,3 +128,11 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+DEFAULT_FROM_EMAIL = 'contact@zor.me'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # new
+EMAIL_HOST = 'smtp.sendgrid.net' # new
+EMAIL_HOST_USER = 'apikey' # new
+EMAIL_HOST_PASSWORD = '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' # new
+EMAIL_PORT = 587 # new
+EMAIL_USE_TLS = True # new
