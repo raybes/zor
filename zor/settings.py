@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'base_app.apps.BaseAppConfig',
-    'sendemail.apps.SendemailConfig'
+    'sendemail.apps.SendemailConfig',
+    # 3rd Party
+    'crispy_forms', # new
 ]
 
 MIDDLEWARE = [
@@ -136,3 +138,5 @@ EMAIL_HOST_USER = 'apikey' # new
 EMAIL_HOST_PASSWORD = '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'# new
 EMAIL_PORT = 587 # new
 EMAIL_USE_TLS = True # new
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

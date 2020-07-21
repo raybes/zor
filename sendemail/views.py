@@ -29,4 +29,5 @@ def contactView(request):
     return render(request, "contact_form.html", {'form': form})
 
 def successView(request):
-    return HttpResponse('Your data has entered an endless void. Success! Please wait for a response, patiently.')
+    # return HttpResponse('Your data has entered an endless void. Success! Please wait for a response, patiently.')
+    return render(request, "success.html")

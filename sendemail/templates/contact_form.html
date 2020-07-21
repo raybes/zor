@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block title %}Message ZOR.me{% endblock title %}
 {% block content %}
-<h1>Contact Us</h1>
-<form method="post">
+	<h1 class="row align-items-center justify-content-center" id="headline-content">ZOR.me Inquiries </h1><form method="post">
     {% csrf_token %}
-    {{ form.as_p }}
+	{{ form|crispy }}
     <div class="form-actions">
       <button type="submit">Send</button>
     </div>
