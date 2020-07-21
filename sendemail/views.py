@@ -22,11 +22,11 @@ def contactView(request):
             from_email = form.cleaned_data['from_email']
             message = form.cleaned_data['message']
             try:
-                send_mail(subject+" : " + from_email, message, 'incoming@zor.me', ['contact@zor.me'])
+                send_mail(subject+" : " + from_email, "From: " + from_email + " Message: " + message, 'incoming@zor.me', ['helloseahorse@protonmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect('success')
     return render(request, "contact_form.html", {'form': form})
 
 def successView(request):
-    return HttpResponse('Your data has entered a void. Success! Please wait for a response, patiently.')
+    return HttpResponse('Your data has entered an endless void. Success! Please wait for a response, patiently.')
